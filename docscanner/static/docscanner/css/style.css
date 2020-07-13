@@ -1,0 +1,635 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    font-family: "Nunito"
+}
+a{
+    text-decoration: none !important;
+}
+
+.main-logo{
+    font-family: "Nova Script";
+    font-size: 1.8em;
+    color: white;
+}
+
+header{
+    background: #1A8CFF;
+    padding: 0.5em 0em;
+}
+
+.login-btn{
+    color:#1A8CFF;
+    background:white;
+    padding: 0.3em 1em;
+    border-radius: 0.4em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 1.1em;
+}
+.signup-btn{
+    
+    color: white;
+    padding: 0.2em 0.6em;
+    border-radius: 0.4em;
+    font-weight: 600;
+    border: 2px solid white;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+
+/* Hero section */
+.hero-bg{
+    width: 100%;
+    height: 89vh;
+    display: flex;
+    flex-direction: column;
+    background:url("../image/thought-catalog-505eectW54k-unsplash\ 1.png");
+    justify-content: center;
+}
+
+
+.hero-text{
+    color: white;
+    text-align: center;
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-hero-text{
+    font-size: 3.5em;
+}
+
+.hero-description{
+    font-weight: 600;
+    font-family: "Nunito";
+    color: #cec8c8;
+}
+
+.hero-signup-btn{
+    text-align: center;
+}
+
+.hero-signup{
+    color: white !important;
+    padding:0.6em 0.8em;
+    border-radius: 0.4em;
+    border: 2px solid white;
+    font-size: 1.1em;
+    transition: ease-in;
+    translate: font-size 2s;
+}
+
+
+
+.hero-signup:hover{
+    background: #aaa2a252;
+
+
+}
+
+.hero-signup:active{
+    background: #4b484852;
+}
+/* Hero section EXit*/
+
+
+
+
+/* Steps Section */
+
+.top-heading{
+    font-size: 2.3em;
+    padding:2em;
+    background:#1A8CFF;
+    text-align:center;
+    color: white;
+}
+
+.steps{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 3em;
+
+}
+
+.step{
+    font-size: 2em;
+    padding:1em 0.8em;
+    background:red;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 18%;
+    border-radius: 0.4em;
+    min-width: 7em;
+    margin-bottom: 2em;
+    /* line-height: 1.4em; */
+    
+    /* width:20%; */
+}
+
+.step-no{
+    font-size:2.3em;
+    text-align: center;
+    color: white;
+    margin-bottom: 0.7em;
+
+}
+
+.step-name{
+    margin: 0.5em;
+    background:white;
+    text-align: center;
+    color: #1A8CFF;
+    font-size:0.6em;
+    border-radius: 0.2em;
+}
+
+.step-desc{
+    /* margin: auto; */
+    font-size: 0.7em;
+    margin-top: 3em;
+    text-align: center;
+    color: white;
+}
+
+
+
+/* Steps Section Exit*/
+
+
+/* Why we section */
+.why-we-container{
+    margin-top: 5em;
+}
+
+.why-we-heading{
+    /* margin-top: 6em; */
+    font-size: 3em;
+    padding-top:1em;
+    font-family: Nunito;
+
+    text-align: center;
+}
+
+.why-we-section{
+    display: flex;
+    flex-direction: column;
+}
+
+.point{
+    display: flex;
+    justify-content: left;
+    margin: 1em;
+    margin-left: 3em;
+}
+
+.point-no{
+    color:black;
+    font-family:Nunito;
+    font-size: 1.8em;
+}
+
+.point-text{
+    margin: 0em 1.8em;
+}
+
+.point-desc{
+    
+    color: #464646;
+    font-weight: bold;
+    font-family: Nunito;
+
+}
+.point-heading{
+    font-size: 2em;
+    color: white;
+}
+
+.why-we-container{
+    background: rgba(26, 140, 255, 0.78);
+    padding-bottom: 2em;
+}
+
+/* Login form */
+.login-page-wrapper{
+    height:90vh;
+    background:#12C8F0;
+    padding: 4em;
+}
+
+
+
+.sub-login-btn{
+    margin-top: 3em;
+    background: linear-gradient(270deg, rgba(56, 53, 235, 0.59) 0%, #16A4F3 99.48%);
+    font-size: 1.6em;
+    padding: 0;
+    padding: 0.1em;
+    font-family: "Nunito";
+    border-radius: 0.4em;
+    margin-top: 1.7em;
+}
+
+
+.form-container label{
+    font-size: 1em;
+}
+
+.form-container{
+    max-width:409px;
+    background:white;
+    padding-top: 4em;
+    padding-bottom: 3em;
+    border-radius: 1.2em;
+}
+
+.form-container input{
+    padding: 0.2em;
+    border: none;
+    border-bottom: 2px solid gray;
+    width: 62%;
+    padding-left: 1.3em;
+    margin-left: 0.8em;
+}
+
+.form-container p{
+    display: flex;
+    padding-top: 2em;
+    justify-content: space-between;
+}
+
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    
+    padding: 2em 3em 2em 3em;
+}
+
+
+.login-page-wrapper{
+    background:url("../image/login_page_bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login-heading{
+    font-size: 2.5em;
+    text-align: center;
+    font-family: "Ubuntu";
+}
+
+
+.errorlist{
+    font-size: 0.8em;
+    color:red;
+}
+
+
+/* Logout page */
+.logout-yes-btn{
+    background: linear-gradient(45deg, #f51c1c, #de3333b3);
+    font-family: "Nunito";
+    border-radius: 0.4em;
+    font-size: 1.2em;
+    width: 49%;
+}
+
+.logout-no-btn{
+    background: linear-gradient(270deg, rgba(56, 53, 235, 0.59) 0%, #16A4F3 99.48%);
+    font-family: "Nunito";
+    border-radius: 0.4em;
+    text-align: center;
+    font-size: 1.2em;
+    width: 49%;
+}
+
+.logout-btn{
+    border-radius: 0.4em;
+    padding: 0.3em 0.7em;
+    font-family: "Nunito";
+    color:#1A8CFF;
+    background:white;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+
+}
+
+.logout-btn:hover{
+   color: #1A8CFF;
+   background: white;
+}
+
+
+
+.logout-page-wrapper{
+    background:url("../image/login_page_bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height:90vh;
+    padding: 4em;
+}
+
+
+.logout-heading{
+    font-size: 1.8em;
+    text-align: center;
+    color: #1f89f4bd;
+    font-family: "Ubuntu";
+    
+}
+
+.logout-confirm{
+    padding: 2px;
+}
+
+.logout-alert{
+    font-size: 1.2em;
+    color: red;
+    font-family: "Nunito";
+}
+
+.confirm-btns{
+    display: flex;
+    justify-content:space-between;    
+    margin-top: 1em;
+}
+
+.nav-username{
+    font-family: "Ubuntu";
+    font-size: 1.3em;
+    color: white !important;
+}
+
+/* Dashboard designing */
+.dashboard-left-box{
+    height: 89vh;
+    background: #1a8cff73;
+    width: 22%;
+}
+
+
+.dashboard-wrapper{
+    display:flex;
+}
+
+
+
+.upload_doc_btn{
+    text-align: end;
+    /* margin: 0.3em; */
+    padding: 0.4em;
+}
+
+
+#upload_doc_modal form label{
+    font-size: 1.2em;
+    font-family: "Nunito";  
+}
+
+#upload_doc_modal form input{
+    border: 2px solid #4bacdb;
+    border-radius: 0.2em;
+    padding: 0.2em;
+}
+
+#upload_doc_modal form p{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;   
+}
+
+#id_document_image{
+    border:none !important;
+    
+}
+
+.document-card img{
+    width:100%;
+    height: 100%;
+}
+
+.document-card{
+    margin: 1em 0em;
+    margin-top: 2em;
+    height: 10em;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.document-card .doc-name{
+    font-family: "Nunito";
+}
+
+
+/* Doc view  */
+
+.document-name{
+    font-size: 1.5em;
+    font-family: "Nunito"; 
+    background: #1a8cff;
+    color: white;
+    border-radius: 2.6em;
+    padding: 0.4em 1em;
+    margin: 0.4em;
+}
+
+
+.document-view-card{
+    margin-top:1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+
+.doc-heading span{
+    font-family: "Nunito";
+
+}
+
+
+.doc-heading{
+    font-size: 1.8em;
+    padding-left: 18px;
+    font-family: "Nunito";    
+}
+
+.doc-name{
+    font-family: "Nunito";
+    margin-left: 6px;
+    margin-bottom: 0.6em;
+    font-size: 1.1em;
+    font-weight: 100;
+}
+
+
+/* Responsive Dashboard */
+
+@media(min-width:600px){
+    
+    .document-card{
+        width: 12em;
+        height: 15em;
+        margin:1em;
+        margin-top:2em ;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+
+    .document-card{
+
+        width: 12em;
+        height: 15em;
+        margin:1em;
+        
+    
+        margin-top:2em;
+    }
+
+
+}
+
+
+/* Confirm document styling */
+.confirm-images-container{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 3em;
+
+}
+
+.flex-50{
+    flex:0.5;
+}
+
+.confirm-images-wrapper{
+    display: flex;
+    max-width: 600px;
+}
+
+#confirm-delete *{
+    font-family: "Ubuntu";
+}
+
+.delete-btn{
+    width:100%;
+}
+
+/* Signup page  */
+
+.signup-form{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    padding:1em 2em;
+}
+
+
+
+.signup-form *{
+    font-family: 'Roboto', sans-serif;
+}
+
+.signup-form label{
+    font-size:1.14em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2rem;
+}
+
+.signup-form ul{
+    color:gray;
+    font-size:0.8em;
+}
+
+.helptext{
+    color:gray;
+    font-size:0.8em;
+}
+
+.signup-form form{
+    width:100%;
+    max-width: 35em;
+}
+
+.signup-create-btn{
+    margin-top:1em;
+}
+
+.errorlist li{
+    color:red;
+}
+
+.errorlist{
+    color:red;
+}
+
+.alert{
+    margin:0em;
+}
+
+
+.signup-form-heading{
+    font-size:1.7em;
+    margin-bottom: 0.8em;
+
+}
+
+.sign-up-wrapper{
+    max-width: 32em;
+    padding: 3em 1.7em;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: white;
+    border-radius: 0.4em;
+    margin-top: 0.6em;
+}
+
+
+.signup-bg{
+    background:url("../image/login_page_bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+
+.doc404Error{
+    font-size: 2em;
+    font-family: "Nunito";
+    word-spacing: 2px;
+}
+
+.error-404-message{
+    padding: 1em 7em;
+    margin-top: 11em;
+}

@@ -1,0 +1,202 @@
+{%extends "docscanner/base.html"%}
+
+
+{%block body%}
+    
+
+    <!-- Button trigger modal -->
+    <div class="upload_doc_btn">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#upload_doc_modal">
+            Upload
+        </button>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="upload_doc_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Select Image
+                </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <form action="" method="POST" enctype="multipart/form-data">
+
+                <div class="modal-body">
+                    <div class="image-canvas-wrapper">
+                        <img src="" alt="" id='previewImg'>
+                        <canvas id="image-canvas"></canvas>
+                    </div>
+                    {%csrf_token%}
+
+        
+                    {{form.as_p}}
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-outline-primary" id="upload-btn">Upload</button>
+
+                </div>
+                    
+            </form>
+
+             </div>
+        </div>
+    </div>
+
+    <div class="main-section">
+
+        <div class="left-box">
+            
+        </div>
+
+
+        <div class="main-doc-section">
+
+            <div class="doc-heading">
+                <span>Documents</span>
+            </div>
+
+            <div class="docs-section row col-12">
+                
+
+    
+                {%if docs%}
+                    {%for doc in docs%}
+                    <a href="/docs/docinfo/{{doc.pk}}">
+                        <div class="document-card">
+                            <div class="doc-name">{{doc.document_name}}</div> 
+                            <img src="/{{doc.document_image.url}}" alt="">
+                            
+                        </div>
+                    </a>
+
+                    {%endfor%}
+                {%endif%}
+            </div>
+
+        </div>
+
+    </div>
+
+{%endblock%}
+
+
+
+{%block script%}
+
+<script type="text/javascript">
+
+    function previewImage(){
+        
+        let input=document.getElementById("id_document_image");
+    
+        if (input.files){
+            let reader=new FileReader();
+            
+            reader.onload=(e)=>{
+            
+                $("#previewImg").attr("src",e.target.result);                
+                positionCanvas();
+
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+
+        }
+
+    }
+
+    var points;
+
+    $("#id_document_image").change((e)=>{
+        previewImage();
+        points=[];        
+    })
+
+
+    function positionCanvas(){
+           
+        let canvas=document.getElementById("image-canvas");
+        let image=document.getElementById("previewImg");
+  
+        canvas.setAttribute("height",image.height+'px');
+        canvas.setAttribute("width",image.width+"px");
+      
+        canvas.style.position="absolute";
+        canvas.style.left=image.offsetLeft+"px";
+        canvas.style.top=image.offsetTop+"px";
+        
+
+    }
+
+    function getMousePos(canvas,event){
+
+        let canvBox=canvas.getBoundingClientRect();
+
+        return {
+            x:event.clientX-canvBox.left,
+            y:event.clientY-canvBox.top
+        }
+
+
+    }
+
+    $("#previewImg").on('click',(event)=>{
+        positionCanvas();
+    })
+    
+    $("#image-canvas").on("click",(event)=>{
+
+        let canvas=$("#image-canvas")[0];
+        let ctx=canvas.getContext("2d");
+        let {x,y}=getMousePos(canvas,event);
+        
+        if (points.length==4){
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            points.splice(0,points.length);
+        }
+
+        ctx.beginPath();
+        ctx.arc(x, y, 5, 0, 2 * Math.PI);
+        ctx.fillStyle='red';
+        ctx.fill();
+
+        let image=document.getElementById("previewImg");
+        points.push([x/image.width,y/image.height]);
+
+        
+
+    })
+
+    document.getElementById("upload-btn").addEventListener("click", (event)=>{
+        
+        let pointsInput = $("<input>")
+               .attr("type", "hidden")
+               .attr("name", "points").val(JSON.stringify(points));
+
+        let image=document.getElementById("previewImg");
+
+        let gr_width=false;
+
+        if (image.width>image.height){
+            gr_width=true;
+        }
+
+        let grWidthInput=$("<input>").attr("type","hidden").attr("name","gr_width").val(JSON.stringify(gr_width));
+   
+        $("form").append(pointsInput);
+        $("form").append(grWidthInput);
+
+        }
+
+    )
+
+</script>
+
+
+{%endblock%}
+

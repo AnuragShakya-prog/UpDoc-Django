@@ -1,0 +1,17 @@
+{%extends 'docscanner/base.html'%}
+
+
+{%block body%}
+    <div class='login-page-wrapper'>
+        <div class="form-container container mx-auto">
+            <div class="login-heading">Login</div>
+            <form action="" method="POST">
+                {%csrf_token%}
+                {{form.as_p}}
+
+
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded sub-login-btn">Login</button>
+            </form>
+        </div>
+    </div>
+{%endblock%}

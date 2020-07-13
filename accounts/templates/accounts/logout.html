@@ -1,0 +1,24 @@
+{%extends 'docscanner/base.html'%}
+
+
+{%block body%}
+    <div class='logout-page-wrapper'>
+        <div class="form-container container mx-auto">
+            <div class="logout-heading">{{request.user.username}}</div>
+            <form action="" method="POST">
+               {%csrf_token%}
+                <div class="logout-alert">
+                   <div class="logout-confirm">
+                       Do you want to logout?
+                    
+                   </div>
+               </div>
+
+                <div class="confirm-btns">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded logout-yes-btn">Yes</button>
+                    <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded logout-no-btn" href="/">No</a>
+                </div>
+            </form>
+        </div>
+    </div>
+{%endblock%}

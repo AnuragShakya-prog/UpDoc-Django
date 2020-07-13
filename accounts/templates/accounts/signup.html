@@ -1,0 +1,23 @@
+{%extends "docscanner/base.html"%}
+
+
+{%block body%}
+
+
+<div class="signup-bg">
+    <div class="signup-form container">
+        <div class="sign-up-wrapper">
+            <div class="signup-form-heading">
+                Create Account
+            </div>
+            <form action="" method="POST">
+                {%csrf_token%}
+                {{form.as_p}}
+            
+                <button type="submit" class="btn btn-outline-primary signup-create-btn">Create Account</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+{%endblock%}

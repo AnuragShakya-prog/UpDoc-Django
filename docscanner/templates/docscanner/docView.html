@@ -1,0 +1,25 @@
+{%extends 'docscanner/base.html'%}
+
+
+{%block body%}
+
+<div class="document-view-card">
+    <div class="doc-info">
+        
+        <div class="document-name">
+            {{document.document_name}}
+        </div>
+
+        <div class="document-desc">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nihil eius obcaecati, dicta minima eveniet laudantium praesentium, exercitationem ratione veniam veritatis tempore, sit quam doloribus enim iusto distinctio? Ipsum nihil accusantium sint cupiditate repellendus nobis minus illo laborum nulla qui?
+        </div>
+
+    </div>
+    
+    <div class="document-image col-5">
+        <img src="/{{document.document_image.url}}" alt="" srcset="">
+    </div>
+</div>
+    
+
+{%endblock%}
